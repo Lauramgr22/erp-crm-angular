@@ -80,11 +80,12 @@ export class LoginComponent implements OnInit, OnDestroy {
       .subscribe((user: any) => {
         console.log(user);
         
-       // if (user) {
-       //   this.router.navigate([this.returnUrl]);
-       // } else {
-       //   this.hasError = true;
-       // }
+        if (user) {
+          //this.router.navigate([this.returnUrl]);
+          document.location.reload();
+        } else {
+          this.hasError = true;
+        }
       });
     this.unsubscribe.push(loginSubscr);
   }
